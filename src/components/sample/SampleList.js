@@ -60,7 +60,7 @@ export const SampleList = (props) => {
           <fieldset className="drops__field">
             <div>
               <select
-                className="text-darkgrey font-bold rounded text-[15px] p-2 bg-green font-primary"
+                className="text-white font-bold rounded text-[20px] p-2 bg-[#1E1B1B] font-primary"
                 onChange={(evt) => {
                   const value = evt.target.value
                   if (value === "") {
@@ -85,7 +85,7 @@ export const SampleList = (props) => {
           <fieldset className="drops__field">
             <div>
               <select
-                className="text-darkgrey font-bold rounded text-[15px] p-2 bg-green ml-[15px] font-primary"
+                className="text-white font-bold rounded text-[20px] p-2 bg-[#1E1B1B] ml-[15px] font-primary"
                 onChange={(evt) => {
                   const value = evt.target.value
                   if (value.length === 0) {

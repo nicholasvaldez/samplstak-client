@@ -13,3 +13,11 @@ select:hover {
 .sample:hover {
   background-color: #252525 !important;
 }
+
+.sample__play-button {
+  transition: color 0.3s ease;
+}
+
+.sample__play-button:hover {
+  color: #1cd25c !important;
+}
