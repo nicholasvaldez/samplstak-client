@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import { Login } from "../components/auth/Login"
+import { Main } from "../components/auth/Main"
 import { Register } from "../components/auth/Register"
 import { CollectionList } from "../components/collection/CollectionList"
 import { SampleForm } from "../components/mysounds/EditMySounds"
@@ -11,6 +12,7 @@ export const ApplicationViews = () => {
   return (
     <>
       <Routes>
+        <Route path="/main" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route element={<Authorized />}>
