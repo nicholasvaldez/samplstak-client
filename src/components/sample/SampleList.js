@@ -9,6 +9,7 @@ import {
 } from "../../managers/samples/SampleManager"
 import { NavBar } from "../nav/NavBar"
 import { Samples } from "./Samples"
+import "./samplelist.css"
 
 export const SampleList = (props) => {
   const [samples, setSamples] = useState([])
@@ -51,67 +52,74 @@ export const SampleList = (props) => {
   return (
     <>
       <NavBar />
-      <h1 class="text-3xl font-bold underline">Browse.</h1>
-      <div className="drops">
-        <fieldset className="drops__field">
-          <div>
-            <select
-              onChange={(evt) => {
-                const value = evt.target.value
-                if (value === "") {
-                  setInstId("")
-                  setFilteredSamples(samples)
-                } else {
-                  setInstId(parseInt(value))
-                }
-              }}
-            >
-              <option value="">{`Instrument`}</option>
-              {instruments.map((i) => (
-                <>
-                  <option key={`instrument--${i.id}`} value={i.id}>
-                    {i.label}
+      <div className="fixed w-screen h-screen bg-darkgrey text-white p-24">
+        <div class="mb-[30px]  text-[50px] font-bold font-primary">
+          hit circle make go boom.
+        </div>
+        <div className="drops flex justify-between w-[200px] mb-[70px]">
+          <fieldset className="drops__field">
+            <div>
+              <select
+                className="text-white font-bold rounded text-[20px] p-3 bg-[#787878] font-primary"
+                onChange={(evt) => {
+                  const value = evt.target.value
+                  if (value === "") {
+                    setInstId("")
+                    setFilteredSamples(samples)
+                  } else {
+                    setInstId(parseInt(value))
+                  }
+                }}
+              >
+                <option value="">{`instrument`}</option>
+                {instruments.map((i) => (
+                  <>
+                    <option key={`instrument--${i.id}`} value={i.id}>
+                      {i.label}
+                    </option>
+                  </>
+                ))}
+              </select>
+            </div>
+          </fieldset>
+          <fieldset className="drops__field">
+            <div>
+              <select
+                className="text-white font-bold rounded text-[20px] p-3 bg-[#787878] ml-[15px] font-primary"
+                onChange={(evt) => {
+                  const value = evt.target.value
+                  if (value.length === 0) {
+                    setGenreId("")
+                    setFilteredSamples(samples)
+                  } else {
+                    setGenreId(value)
+                  }
+                }}
+              >
+                <option value="">{`genre`}</option>
+                {genres.map((g) => (
+                  <option key={`genre--${g.id}`} value={g.id}>
+                    {g.label}
                   </option>
-                </>
-              ))}
-            </select>
-          </div>
-        </fieldset>
-        <fieldset className="drops__field">
-          <div>
-            <select
-              onChange={(evt) => {
-                const value = evt.target.value
-                if (value.length === 0) {
-                  setGenreId("")
-                  setFilteredSamples(samples)
-                } else {
-                  setGenreId(value)
-                }
-              }}
-            >
-              <option value="">{`Genre`}</option>
-              {genres.map((g) => (
-                <option key={`genre--${g.id}`} value={g.id}>
-                  {g.label}
-                </option>
-              ))}
-            </select>
-          </div>
-        </fieldset>
+                ))}
+              </select>
+            </div>
+          </fieldset>
+        </div>
+
+        <article className="samples">
+          {filteredSamples.map((s) => (
+            <Samples
+              id={s.id}
+              fileUrl={s.file_url}
+              fileName={s.file_name}
+              producer={s.producer}
+              instrument={s.instrument.label}
+              genre={s.genre.map((g) => g.label).join(", ")}
+            />
+          ))}
+        </article>
       </div>
-      <article className="samples">
-        {filteredSamples.map((s) => (
-          <Samples
-            id={s.id}
-            fileUrl={s.file_url}
-            fileName={s.file_name}
-            producer={s.producer}
-            instrument={s.instrument.label}
-            genre={s.genre.map((g) => g.label).join(", ")}
-          />
-        ))}
-      </article>
     </>
   )
 }

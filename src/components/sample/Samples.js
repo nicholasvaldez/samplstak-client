@@ -13,13 +13,14 @@ export const Samples = ({
   }
 
   return (
-    <section key={`sample--${id}`} className="sample">
-      <h2 className="sample__play-button">
+    <section
+      key={`sample--${id}`}
+      className="sample  w-[1300px] h-[90px] grid grid-cols-9 gap-4 "
+    >
+      <h2 className="sample__play-button col-start-1">
         <a href={fileUrl}>&gt;</a>
       </h2>
-      <div className="sample__url">
-        {fileName} by {producer}
-      </div>
+      <div className="sample__url col-start-2 col-span-4">{fileName}</div>
 
       <div className="sample__instrument">{instrument}</div>
       <div className="sample__genre">{genre}</div>

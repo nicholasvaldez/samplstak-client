@@ -5,10 +5,10 @@ import logo from "../../assets/STACKY.svg"
 export const NavBar = () => {
   const navigate = useNavigate()
   return (
-    <ul className="navbar">
-      <div className="logo">
+    <ul className="navbar flex">
+      <li className="logo ">
         <img src={`${logo}`} alt="Logo" />
-      </div>
+      </li>
       {localStorage.getItem("lu_token") !== null ? (
         <>
           <li className="navbar__item">
@@ -26,7 +26,7 @@ export const NavBar = () => {
               My Sounds
             </Link>
           </li>
-          <li className="nav-item text-white font-bold">
+          <li className="logout-item text-white font-bold ">
             <button
               className="nav-link fakeLink"
               onClick={() => {
