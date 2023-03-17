@@ -7,6 +7,7 @@ import {
   getGenreSamples,
   getSamples,
 } from "../../managers/samples/SampleManager"
+import { NavBar } from "../nav/NavBar"
 import { Samples } from "./Samples"
 
 export const SampleList = (props) => {
@@ -49,6 +50,7 @@ export const SampleList = (props) => {
 
   return (
     <>
+      <NavBar />
       <h1 class="text-3xl font-bold underline">Browse.</h1>
       <div className="drops">
         <fieldset className="drops__field">

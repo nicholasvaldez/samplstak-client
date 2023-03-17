@@ -4,14 +4,18 @@
   justify-content: left;
   align-items: center;
   height: 75px;
-  background-color: black;
+  background-color: #0b0101;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
 }
 
 .navbar__item {
   flex-basis: 20%;
   list-style-type: none;
 }
-.logo {
-  height: 240px;
-  width: 255px;
+
+.login-item {
+  margin-left: 1100px;
+  padding-right: 50px;
 }
