@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { loginUser } from "../../managers/AuthManager"
-import "./auth.css"
+import logo from "../../assets/newnewlogin.svg"
 
 export const Login = () => {
   const username = useRef()
@@ -18,7 +18,7 @@ export const Login = () => {
     loginUser(user).then((res) => {
       if ("valid" in res && res.valid && "token" in res) {
         localStorage.setItem("lu_token", res.token)
-        navigate("/")
+        navigate("/browse")
       } else {
         invalidDialog.current.showModal()
       }
@@ -26,7 +26,7 @@ export const Login = () => {
   }
 
   return (
-    <main className="container--login">
+    <main className=" fixed container--login bg-darkgrey h-screen w-screen text-white">
       <dialog className="dialog dialog--auth" ref={invalidDialog}>
         <div>Username or password was not valid.</div>
         <button
@@ -36,29 +36,30 @@ export const Login = () => {
           Close
         </button>
       </dialog>
-      <section>
-        <form className="form--login" onSubmit={handleLogin}>
-          <h1>SamplStak</h1>
-          <h2>Please sign in</h2>
-          <fieldset>
-            <label htmlFor="inputUsername"> Username address </label>
+      <section className="flex justify-center flex-col items-center">
+        <div className="logo transform scale-70">
+          <img src={`${logo}`} alt="Logo" />
+        </div>
+        <form className="form--login " onSubmit={handleLogin}>
+          <fieldset className="">
             <input
               ref={username}
               type="username"
               id="username"
-              className="form-control"
-              placeholder="Username address"
+              name="username"
+              className="form-control w-[405px] h-[43px] mb-[15px] rounded text-black"
+              placeholder="Username"
               required
               autoFocus
             />
           </fieldset>
           <fieldset>
-            <label htmlFor="inputPassword"> Password </label>
             <input
               ref={password}
               type="password"
               id="password"
-              className="form-control"
+              name="password"
+              className="form-control w-[405px] h-[43px] rounded text-black"
               placeholder="Password"
               required
             />
@@ -68,14 +69,28 @@ export const Login = () => {
               textAlign: "center",
             }}
           >
-            <button className="btn btn-1 btn-sep icon-send" type="submit">
+            {/* <button className="" type="submit">
+              Sign In
+            </button> */}
+            <button
+              type="submit"
+              className="font-primary text-white font-bold bg-green rounded"
+              style={{
+                marginLeft: "00px",
+                marginTop: "40px",
+                height: "35px",
+                width: "103px",
+              }}
+            >
               Sign In
             </button>
           </fieldset>
         </form>
-      </section>
-      <section className="link--register">
-        <Link to="/register">Not a member yet?</Link>
+        <section className="link--register mt-20 ">
+          <Link to="/register" className="text-xs">
+            Not a member yet?
+          </Link>
+        </section>
       </section>
     </main>
   )
