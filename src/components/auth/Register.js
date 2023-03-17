@@ -2,6 +2,7 @@ import React, { useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { registerUser } from "../../managers/AuthManager"
 import "./auth.css"
+import logo from "../../assets/register.svg"
 
 export const Register = () => {
   const firstName = useRef()
@@ -37,7 +38,10 @@ export const Register = () => {
   }
 
   return (
-    <main style={{ textAlign: "center" }}>
+    <main
+      style={{ textAlign: "center" }}
+      className=" fixed container--login bg-darkgrey h-screen w-screen text-white"
+    >
       <dialog className="dialog dialog--password" ref={passwordDialog}>
         <div>Passwords do not match</div>
         <button
@@ -47,86 +51,87 @@ export const Register = () => {
           Close
         </button>
       </dialog>
+      <section className="flex justify-center flex-col items-center">
+        <div className="logo transform scale-70">
+          <img src={`${logo}`} alt="Logo" />
+        </div>
+        <form className="form--login" onSubmit={handleRegister}>
+          <div className="flex justify-between">
+            <fieldset>
+              <input
+                ref={firstName}
+                type="text"
+                name="firstName"
+                className="form-control  w-[190px] h-[43px] mb-[15px] rounded text-black"
+                placeholder="First name"
+                required
+                autoFocus
+              />
+            </fieldset>
+            <fieldset>
+              <input
+                ref={lastName}
+                type="text"
+                name="lastName"
+                className="form-control  w-[190px] h-[43px] mb-[15px] rounded text-black"
+                placeholder="Last name"
+                required
+              />
+            </fieldset>
+          </div>
+          <fieldset>
+            <input
+              ref={username}
+              type="text"
+              name="username"
+              className="form-control  w-[405px] h-[43px] mb-[15px] rounded text-black"
+              placeholder="Username"
+              required
+            />
+          </fieldset>
+          <fieldset>
+            <input
+              ref={password}
+              type="password"
+              name="password"
+              className="form-control  w-[405px] h-[43px] mb-[15px] rounded text-black"
+              placeholder="Password"
+              required
+            />
+          </fieldset>
+          <fieldset>
+            <input
+              ref={verifyPassword}
+              type="password"
+              name="verifyPassword"
+              className="form-control  w-[405px] h-[43px] mb-[15px] rounded text-black"
+              placeholder="Verify password"
+              required
+            />
+          </fieldset>
 
-      <form className="form--login" onSubmit={handleRegister}>
-        <h1 className="h3 mb-3 font-weight-normal">Register an account</h1>
-        <fieldset>
-          <label htmlFor="firstName"> First Name </label>
-          <input
-            ref={firstName}
-            type="text"
-            name="firstName"
-            className="form-control"
-            placeholder="First name"
-            required
-            autoFocus
-          />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="lastName"> Last Name </label>
-          <input
-            ref={lastName}
-            type="text"
-            name="lastName"
-            className="form-control"
-            placeholder="Last name"
-            required
-          />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="inputUsername">Username</label>
-          <input
-            ref={username}
-            type="text"
-            name="username"
-            className="form-control"
-            placeholder="Username"
-            required
-          />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="inputPassword"> Password </label>
-          <input
-            ref={password}
-            type="password"
-            name="password"
-            className="form-control"
-            placeholder="Password"
-            required
-          />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="verifyPassword"> Verify Password </label>
-          <input
-            ref={verifyPassword}
-            type="password"
-            name="verifyPassword"
-            className="form-control"
-            placeholder="Verify password"
-            required
-          />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="verifyPassword"> Verify Password </label>
-          <textarea
-            ref={bio}
-            name="bio"
-            className="form-control"
-            placeholder="Let other gamers know a little bit about you..."
-          />
-        </fieldset>
-        <fieldset
-          style={{
-            textAlign: "center",
-          }}
-        >
-          <button className="btn btn-1 btn-sep icon-send" type="submit">
-            Register
-          </button>
-        </fieldset>
-      </form>
-      <section className="link--register">
-        Already registered? <Link to="/login">Login</Link>
+          <fieldset
+            style={{
+              textAlign: "center",
+            }}
+          >
+            <button
+              type="submit"
+              className="font-primary text-white font-bold bg-green rounded"
+              style={{
+                marginLeft: "00px",
+                marginTop: "40px",
+                height: "35px",
+                width: "103px",
+              }}
+            >
+              Register
+            </button>
+          </fieldset>
+        </form>
+        <section className="link--register mt-10">
+          Already registered? <Link to="/login">Login</Link>
+        </section>
       </section>
     </main>
   )
