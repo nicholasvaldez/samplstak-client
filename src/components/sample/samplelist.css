@@ -1,0 +1,7 @@
+select {
+  transition: background-color 0.3s ease;
+}
+
+select:hover {
+  background-color: #656565 !important;
+}
