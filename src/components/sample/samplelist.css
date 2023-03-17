@@ -3,5 +3,21 @@ select {
 }
 
 select:hover {
-  background-color: #656565 !important;
+  background-color: #1cd25c !important;
+}
+
+.sample {
+  transition: background-color 0.3s ease;
+}
+
+.sample:hover {
+  background-color: #252525 !important;
+}
+
+.sample__play-button {
+  transition: color 0.3s ease;
+}
+
+.sample__play-button:hover {
+  color: #1cd25c !important;
 }

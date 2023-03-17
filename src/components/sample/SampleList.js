@@ -52,7 +52,7 @@ export const SampleList = (props) => {
   return (
     <>
       <NavBar />
-      <div className="fixed w-screen h-screen bg-darkgrey text-white p-24">
+      <div className="fixed w-screen h-screen bg-[#191414] text-white p-24">
         <div class="mb-[30px]  text-[50px] font-bold font-primary">
           hit circle make go boom.
         </div>
@@ -60,7 +60,7 @@ export const SampleList = (props) => {
           <fieldset className="drops__field">
             <div>
               <select
-                className="text-white font-bold rounded text-[20px] p-3 bg-[#787878] font-primary"
+                className="text-white font-bold rounded text-[20px] p-2 bg-[#1E1B1B] font-primary"
                 onChange={(evt) => {
                   const value = evt.target.value
                   if (value === "") {
@@ -85,7 +85,7 @@ export const SampleList = (props) => {
           <fieldset className="drops__field">
             <div>
               <select
-                className="text-white font-bold rounded text-[20px] p-3 bg-[#787878] ml-[15px] font-primary"
+                className="text-white font-bold rounded text-[20px] p-2 bg-[#1E1B1B] ml-[15px] font-primary"
                 onChange={(evt) => {
                   const value = evt.target.value
                   if (value.length === 0) {

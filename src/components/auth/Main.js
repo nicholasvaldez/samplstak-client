@@ -28,7 +28,7 @@ export const Main = () => {
           </div>
           <Link className="nav-link" to="/register">
             <button
-              className="font-primary text-white font-bold bg-green rounded"
+              className="main-button font-primary text-white font-bold bg-green rounded"
               style={{
                 marginLeft: "67px",
                 marginTop: "10px",
