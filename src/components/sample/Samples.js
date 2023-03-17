@@ -16,7 +16,7 @@ export const Samples = ({
   return (
     <section
       key={`sample--${id}`}
-      className="sample font-primary w-[1300px] h-[90px] grid grid-cols-9 gap-4  flex items-center bg-[#1E1B1B] text-white mb-[5px]"
+      className="sample font-primary w-[1300px] h-[90px] grid grid-cols-9 gap-4  flex items-center bg-[#1E1B1B] text-white mb-[5px] "
     >
       <h2 className=" col-start-1 text-green flex justify-center text-[25px]">
         <a href={fileUrl}>

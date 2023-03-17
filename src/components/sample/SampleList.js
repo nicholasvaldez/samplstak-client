@@ -85,7 +85,7 @@ export const SampleList = (props) => {
           <fieldset className="drops__field">
             <div>
               <select
-                className="text-white font-bold rounded text-[20px] p-2 bg-[#1E1B1B] ml-[15px] font-primary"
+                className="text-white font-bold rounded text-[20px] p-2 bg-[#1E1B1B] ml-[15px] font-primary "
                 onChange={(evt) => {
                   const value = evt.target.value
                   if (value.length === 0) {
@@ -107,7 +107,7 @@ export const SampleList = (props) => {
           </fieldset>
         </div>
 
-        <article className="samples">
+        <article className="samples max-h-[440px] rounded-xl overflow-y-auto">
           {filteredSamples.map((s) => (
             <Samples
               id={s.id}
