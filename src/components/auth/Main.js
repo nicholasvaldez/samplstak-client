@@ -1,5 +1,6 @@
 import React from "react"
 import myImage from "../../assets/techivation-WHTq-xyU40o-unsplash.png"
+import "./main.css"
 
 export const Main = () => {
   return (
@@ -22,6 +23,17 @@ export const Main = () => {
             explore the worlds best drumkit sample <br /> library and unmatched
             marketplace.
           </div>
+          <button
+            className="font-primary text-white font-bold bg-green rounded"
+            style={{
+              marginLeft: "67px",
+              marginTop: "10px",
+              height: "35px",
+              width: "103px",
+            }}
+          >
+            Get Started
+          </button>
         </div>
       </main>
     </div>

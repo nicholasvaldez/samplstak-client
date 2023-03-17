@@ -13,6 +13,7 @@ module.exports = {
       silver: "#ecebff",
       "bubble-gum": "#ff77e9",
       bermuda: "#78dcca",
+      green: "#1DB954",
     },
     fontSize: {
       sm: ["14px", "20px"],
