@@ -5,7 +5,7 @@ import logo from "../../assets/STACKY.svg"
 export const NavBar = () => {
   const navigate = useNavigate()
   return (
-    <ul className="navbar flex">
+    <ul className="navbar flex font-primary">
       <li className="logo ">
         <img src={`${logo}`} alt="Logo" />
       </li>
@@ -40,7 +40,7 @@ export const NavBar = () => {
         </>
       ) : (
         <>
-          <li className="login-item text-white">
+          <li className="login-item text-white font-bold">
             <Link className="nav-link" to="/login">
               Login
             </Link>
