@@ -5,6 +5,8 @@ import {
   getMySoundsSamples,
 } from "../../managers/samples/MySounds"
 import { Link } from "react-router-dom"
+import { NavBar } from "../nav/NavBar"
+import { AiOutlinePlus } from "react-icons/ai"
 
 export const MySoundsList = (props) => {
   const [samples, setSamples] = useState([])
@@ -15,24 +17,31 @@ export const MySoundsList = (props) => {
 
   return (
     <>
-      <div className="headers">
-        <h1>Create.</h1>
-        <a href={"/mysounds/new"}>
-          <h1 className="plus">+</h1>
-        </a>
+      <NavBar />
+      <div className="fixed w-screen h-screen bg-[#191414] text-white p-24">
+        <div className="flex justify-between">
+          <div class="mb-[30px]  text-[50px] font-bold font-primary">
+            Create.
+          </div>
+          <a href={"/mysounds/new"}>
+            <h1 className="plus text-[50px] mt-[15px]">
+              <AiOutlinePlus />
+            </h1>
+          </a>
+        </div>
+        <article className="samples max-h-[540px] rounded-xl overflow-y-auto">
+          {samples.map((s) => (
+            <MySoundsSamples
+              id={s.id}
+              fileUrl={s.file_url}
+              fileName={s.file_name}
+              producer={s.producer}
+              instrument={s.instrument.label}
+              genre={s.genre.map((g) => g.label).join(", ")}
+            />
+          ))}
+        </article>
       </div>
-      <article className="samples">
-        {samples.map((s) => (
-          <MySoundsSamples
-            id={s.id}
-            fileUrl={s.file_url}
-            fileName={s.file_name}
-            producer={s.producer}
-            instrument={s.instrument.label}
-            genre={s.genre.map((g) => g.label).join(", ")}
-          />
-        ))}
-      </article>
     </>
   )
 }

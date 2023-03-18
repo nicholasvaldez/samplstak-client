@@ -71,7 +71,7 @@ export const CollectionList = (props) => {
                   }
                 }}
               >
-                <option value="">{`Instrument`}</option>
+                <option value="">{`instrument`}</option>
                 {instruments.map((i) => (
                   <>
                     <option key={`instrument--${i.id}`} value={i.id}>
@@ -96,7 +96,7 @@ export const CollectionList = (props) => {
                   }
                 }}
               >
-                <option value="">{`Genre`}</option>
+                <option value="">{`genre`}</option>
                 {genres.map((g) => (
                   <option key={`genre--${g.id}`} value={g.id}>
                     {g.label}
