@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom"
-import { addToCollection } from "../../managers/samples/Collection"
 import { deleteSample } from "../../managers/samples/MySounds"
-import { FaPlay } from "react-icons/fa"
+import { FaPlay, FaStop } from "react-icons/fa"
 import { AiOutlineEdit } from "react-icons/ai"
 import { AiOutlineDelete } from "react-icons/ai"
+import { useRef, useState } from "react"
 
 export const MySoundsSamples = ({
   id,
@@ -13,7 +13,26 @@ export const MySoundsSamples = ({
   instrument,
   genre,
 }) => {
+  const audioRef = useRef()
+  const [isPlaying, setIsPlaying] = useState(false)
+
   const navigate = useNavigate()
+
+  const handleLogoClick = () => {
+    if (!isPlaying) {
+      audioRef.current.currentTime = 0 // reset audio to beginning
+      audioRef.current.play()
+      setIsPlaying(true)
+    } else {
+      audioRef.current.pause()
+      setIsPlaying(false)
+    }
+  }
+  const handleAudioEnded = () => {
+    setIsPlaying(false)
+  }
+
+  const file = "http://localhost:8000" + fileUrl
 
   return (
     <section
@@ -21,9 +40,30 @@ export const MySoundsSamples = ({
       className="sample font-primary w-[1200px] h-[90px] grid grid-cols-9 gap-4  flex items-center bg-[#1E1B1B] text-white mb-[5px] "
     >
       <h2 className=" col-start-1 text-green flex justify-center text-[25px]">
-        <a href={fileUrl}>
-          <FaPlay />
-        </a>
+        <div>
+          {isPlaying ? (
+            <FaStop
+              className="sample__stop-button"
+              onClick={() => {
+                audioRef.current.pause()
+                setIsPlaying(false)
+              }}
+            />
+          ) : (
+            <FaPlay className="sample__play-button" onClick={handleLogoClick} />
+          )}
+          <audio
+            ref={audioRef}
+            src={file}
+            onEnded={handleAudioEnded}
+            onPlay={() => {
+              setIsPlaying(true)
+            }}
+            onPause={() => {
+              setIsPlaying(false)
+            }}
+          />
+        </div>
       </h2>
       <div className="sample__url col-start-2 col-span-3">{fileName}</div>
 
