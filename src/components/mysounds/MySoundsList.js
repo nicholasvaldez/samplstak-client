@@ -20,7 +20,7 @@ export const MySoundsList = (props) => {
       <NavBar />
       <div className="fixed w-screen h-screen bg-[#191414] text-white p-24">
         <div className="flex justify-between">
-          <div class="mb-[30px]  text-[50px] font-bold font-primary">
+          <div className="mb-[30px]  text-[50px] font-bold font-primary">
             Create.
           </div>
           <a href={"/mysounds/new"}>
