@@ -4,6 +4,7 @@ import { getGenres } from "../../managers/genres/Genres"
 import { getInstruments } from "../../managers/instruments/Instruments"
 import { addNewSample, updateSample } from "../../managers/samples/MySounds"
 import { getSingleSample } from "../../managers/samples/SampleManager"
+import { NavBar } from "../nav/NavBar"
 
 export const SampleForm = ({ token }) => {
   const [sample, setSample] = useState({})
@@ -84,106 +85,116 @@ export const SampleForm = ({ token }) => {
   }
 
   return (
-    <form className="addNewPostForm">
-      <fieldset>
-        <div className="form-group">
-          <input type="file" id="sample_audio" onChange={wrapperFunc} />
-          <input type="hidden" name="sample_id" value={currentSample.id} />
+    <>
+      <NavBar />
+      <main className=" fixed container--login bg-[#191414] h-screen w-screen text-white p-24">
+        {sampleId ? (
+          <div className="mb-[50px]  text-[50px] font-primary font-bold font-primary">
+            Edit.
+          </div>
+        ) : (
+          <div className="mb-[50px]  text-[50px] font-primary font-bold font-primary">
+            Add.
+          </div>
+        )}
+        <section className="flex justify-center flex-col items-center">
+          <form className="addNewPostForm ">
+            <fieldset>
+              <div className="form-group font-primary ">
+                <input type="file" id="sample_audio" onChange={wrapperFunc} />
+                <input
+                  type="hidden"
+                  name="sample_id"
+                  value={currentSample.id}
+                />
+              </div>
+            </fieldset>
+            <fieldset>
+              <div className="form-group">
+                <select
+                  name="instrument"
+                  className="form-control text-black w-[190px] h-[43px] my-[15px] font-primary"
+                  value={currentSample.instrument.id}
+                  onChange={handleNewPostInfo}
+                >
+                  <option value={0}>Instrument</option>
+                  {instrument.map((i) => (
+                    <option key={`instrument--${i.id}`} value={i.id}>
+                      {i.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </fieldset>
 
-          {/* <input
-            type="text"
-            name="file_name"
-            required
-            autoFocus
-            className="title-form-control"
-            defaultValue={file.name}
-            onChange={handleNewPostInfo}
-          /> */}
-        </div>
-      </fieldset>
-      {/*  <fieldset>
-        <div className="form-group">
-          <input
-            type="text"
-            name="file_url"
-            required
-            autoFocus
-            className=""
-            placeholder="Soundcloud url"
-            defaultValue={currentSample.file_url}
-            onChange={handleNewPostInfo}
-          />
-        </div>
-      </fieldset> */}
-      <fieldset>
-        <div className="form-group">
-          <select
-            name="instrument"
-            className="form-control"
-            defaultValue={currentSample.instrument.id}
-            onChange={handleNewPostInfo}
-          >
-            {instrument.map((i) => (
-              <option key={`instrument--${i.id}`} value={i.id}>
-                {i.label}
-              </option>
-            ))}
-          </select>
-        </div>
-      </fieldset>
+            <div className="field">
+              {genres.map((g) => {
+                // Compare current `id` and see if on object exists with that id in currentGame.categories
+                const foundGenre = currentSample.genre.find(
+                  (sampleGenre) => g.id === sampleGenre.id
+                )
 
-      <div className="field">
-        <label htmlFor="content" className="label">
-          Genres:{" "}
-        </label>
-        {genres.map((g) => {
-          // Compare current `id` and see if on object exists with that id in currentGame.categories
-          const foundGenre = currentSample.genre.find(
-            (sampleGenre) => g.id === sampleGenre.id
-          )
-
-          return (
-            <div key={`genre--${g.id}`}>
-              <input
-                type="checkbox"
-                name={g.label}
-                defaultChecked={foundGenre}
-                onClick={() => genArr(g.id)}
-              />
-              <label htmlFor={g.label}>{g?.label}</label>
-              <br />
+                return (
+                  <div key={`genre--${g.id}`} className="flex flex-wrap">
+                    <input
+                      className="font-primary font mr-[10px] "
+                      type="checkbox"
+                      name={g.label}
+                      defaultChecked={foundGenre}
+                      onClick={() => genArr(g.id)}
+                    />
+                    <label htmlFor={g.label}>{g?.label}</label>
+                    <br />
+                  </div>
+                )
+              })}
             </div>
-          )
-        })}
-      </div>
-      <button
-        type="publish"
-        className="btn btn-primary"
-        onClick={(evt) => {
-          // Prevent form from being submitted
-          evt.preventDefault()
+            <button
+              type="publish"
+              className="font-primary text-white font-bold bg-green rounded"
+              style={{
+                marginLeft: "40px",
+                marginTop: "40px",
+                height: "35px",
+                width: "103px",
+              }}
+              onClick={(evt) => {
+                // Prevent form from being submitted
+                evt.preventDefault()
 
-          const sample = {
-            file_url: currentSample.file_url,
-            file_name: file.name,
-            instrument: parseInt(currentSample.instrument),
-            genre: Array.from(sampGenres),
-            producer: currentSample.producer,
-          }
+                // Send POST request to your API
 
-          // Send POST request to your API
+                if (sampleId) {
+                  const sample = {
+                    file_url: currentSample.file_url,
+                    file_name: currentSample.file_name,
+                    instrument: parseInt(currentSample.instrument),
+                    genre: Array.from(sampGenres),
+                    producer: currentSample.producer,
+                  }
+                  updateSample(sampleId, sample).then(() =>
+                    navigate("/mysounds")
+                  )
+                } else {
+                  const sample = {
+                    file_url: currentSample.file_url,
+                    file_name: file.name,
+                    instrument: parseInt(currentSample.instrument),
+                    genre: Array.from(sampGenres),
+                    producer: currentSample.producer,
+                  }
 
-          if (sampleId) {
-            updateSample(sampleId, sample).then(() => navigate("/mysounds"))
-          } else {
-            addNewSample(sample).then(() => navigate("/mysounds"))
-          }
+                  addNewSample(sample).then(() => navigate("/mysounds"))
+                }
 
-          /* updateSample(sampleId, sample).then(() => navigate("/mysounds")) */
-        }}
-      >
-        Submit
-      </button>
-    </form>
+                /* updateSample(sampleId, sample).then(() => navigate("/mysounds")) */
+              }}
+            >
+              Submit
+            </button>
+          </form>
+        </section>
+      </main>
+    </>
   )
 }
