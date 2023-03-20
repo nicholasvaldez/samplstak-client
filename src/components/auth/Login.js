@@ -47,7 +47,7 @@ export const Login = () => {
               type="username"
               id="username"
               name="username"
-              className="form-control w-[405px] h-[43px] mb-[15px] rounded text-black"
+              className="form-control pl-[10px] w-[405px] h-[43px] mb-[15px] rounded text-black"
               placeholder="Username"
               required
               autoFocus
@@ -59,7 +59,7 @@ export const Login = () => {
               type="password"
               id="password"
               name="password"
-              className="form-control w-[405px] h-[43px] rounded text-black"
+              className="form-control pl-[10px] w-[405px] h-[43px] rounded text-black"
               placeholder="Password"
               required
             />

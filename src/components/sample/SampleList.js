@@ -53,7 +53,9 @@ export const SampleList = (props) => {
     <>
       <NavBar />
       <div className="fixed w-screen h-screen bg-[#191414] text-white p-24">
-        <div class="mb-[30px]  text-[50px] font-bold font-primary">Browse.</div>
+        <div className="mb-[30px]  text-[50px] font-bold font-primary">
+          Browse.
+        </div>
         <div className="drops flex justify-between w-[200px] mb-[70px]">
           <fieldset className="drops__field">
             <div>

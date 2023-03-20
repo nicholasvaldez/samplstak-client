@@ -62,7 +62,7 @@ export const Register = () => {
                 ref={firstName}
                 type="text"
                 name="firstName"
-                className="form-control  w-[190px] h-[43px] mb-[15px] rounded text-black"
+                className="pl-[10px] form-control  w-[190px] h-[43px] mb-[15px] rounded text-black"
                 placeholder="First name"
                 required
                 autoFocus
@@ -73,7 +73,7 @@ export const Register = () => {
                 ref={lastName}
                 type="text"
                 name="lastName"
-                className="form-control  w-[190px] h-[43px] mb-[15px] rounded text-black"
+                className="pl-[10px] form-control  w-[190px] h-[43px] mb-[15px] rounded text-black"
                 placeholder="Last name"
                 required
               />
@@ -84,7 +84,7 @@ export const Register = () => {
               ref={username}
               type="text"
               name="username"
-              className="form-control  w-[405px] h-[43px] mb-[15px] rounded text-black"
+              className="pl-[10px] form-control  w-[405px] h-[43px] mb-[15px] rounded text-black"
               placeholder="Username"
               required
             />
@@ -94,7 +94,7 @@ export const Register = () => {
               ref={password}
               type="password"
               name="password"
-              className="form-control  w-[405px] h-[43px] mb-[15px] rounded text-black"
+              className="pl-[10px] form-control  w-[405px] h-[43px] mb-[15px] rounded text-black"
               placeholder="Password"
               required
             />
@@ -104,8 +104,18 @@ export const Register = () => {
               ref={verifyPassword}
               type="password"
               name="verifyPassword"
-              className="form-control  w-[405px] h-[43px] mb-[15px] rounded text-black"
+              className="pl-[10px] form-control  w-[405px] h-[43px] mb-[15px] rounded text-black"
               placeholder="Verify password"
+              required
+            />
+          </fieldset>
+          <fieldset>
+            <input
+              ref={bio}
+              type="text"
+              name="bio"
+              className="pl-[10px] form-control  w-[405px] h-[86px] mb-[15px] rounded text-black"
+              placeholder="Tell us about yourself!"
               required
             />
           </fieldset>
