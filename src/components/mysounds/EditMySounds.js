@@ -10,6 +10,7 @@ export const SampleForm = ({ token }) => {
   const [instrument, setInstruments] = useState([])
   const [genres, setGenres] = useState([])
   const [sampGenres, setSampGenres] = useState(new Set())
+  const [file, setFile] = useState()
 
   const { sampleId } = useParams()
   const navigate = useNavigate()
@@ -60,23 +61,47 @@ export const SampleForm = ({ token }) => {
     setCurrentSample(copy)
   }
 
+  const getBase64 = (file, callback) => {
+    const reader = new FileReader()
+    reader.addEventListener("load", () => callback(reader.result))
+    reader.readAsDataURL(file)
+  }
+
+  const createAudioString = (event) => {
+    getBase64(event.target.files[0], (base64AudioString) => {
+      console.log("Base64 of file is", base64AudioString)
+
+      // Update a component state variable to the value of base64AudioString
+      const copy = { ...currentSample }
+      copy.file_url = base64AudioString
+      setCurrentSample(copy)
+    })
+  }
+
+  const wrapperFunc = (e) => {
+    createAudioString(e)
+    setFile(e.target.files[0])
+  }
+
   return (
     <form className="addNewPostForm">
       <fieldset>
         <div className="form-group">
-          <input
+          <input type="file" id="sample_audio" onChange={wrapperFunc} />
+          <input type="hidden" name="sample_id" value={currentSample.id} />
+
+          {/* <input
             type="text"
             name="file_name"
             required
             autoFocus
             className="title-form-control"
-            placeholder="File name"
-            defaultValue={currentSample.file_name}
+            defaultValue={file.name}
             onChange={handleNewPostInfo}
-          />
+          /> */}
         </div>
       </fieldset>
-      <fieldset>
+      {/*  <fieldset>
         <div className="form-group">
           <input
             type="text"
@@ -89,13 +114,13 @@ export const SampleForm = ({ token }) => {
             onChange={handleNewPostInfo}
           />
         </div>
-      </fieldset>
+      </fieldset> */}
       <fieldset>
         <div className="form-group">
           <select
             name="instrument"
             className="form-control"
-            value={currentSample.instrument.id}
+            defaultValue={currentSample.instrument.id}
             onChange={handleNewPostInfo}
           >
             {instrument.map((i) => (
@@ -140,7 +165,7 @@ export const SampleForm = ({ token }) => {
 
           const sample = {
             file_url: currentSample.file_url,
-            file_name: currentSample.file_name,
+            file_name: file.name,
             instrument: parseInt(currentSample.instrument),
             genre: Array.from(sampGenres),
             producer: currentSample.producer,
