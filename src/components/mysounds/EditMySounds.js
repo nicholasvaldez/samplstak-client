@@ -166,7 +166,7 @@ export const SampleForm = ({ token }) => {
 
                 if (sampleId) {
                   const sample = {
-                    file_url: currentSample.file_url,
+                    // file_url: currentSample.file_url,
                     file_name: currentSample.file_name,
                     instrument: parseInt(currentSample.instrument),
                     genre: Array.from(sampGenres),
