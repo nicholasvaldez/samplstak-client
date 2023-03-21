@@ -8,6 +8,7 @@ export const SampleCollection = ({
   producer,
   instrument,
   genre,
+  image,
 }) => {
   const audioRef = useRef()
   const [isPlaying, setIsPlaying] = useState(false)
@@ -27,13 +28,21 @@ export const SampleCollection = ({
   }
 
   const file = "http://localhost:8000" + fileUrl
+  const imgFile = "http://localhost:8000" + image
 
   return (
     <section
       key={`sample--${id}`}
       className="sample font-primary w-[1300px] h-[90px] grid grid-cols-9 gap-4  flex items-center bg-[#1E1B1B] text-white mb-[5px] "
     >
-      <h2 className=" col-start-1 text-green flex justify-center text-[25px]">
+      <div className="col-start-1">
+        <img
+          src={imgFile}
+          alt="Producer Image"
+          className="ml-[35px] h-[50px] w-[50px] object-cover"
+        ></img>
+      </div>
+      <h2 className=" col-start-2 text-green flex justify-center text-[25px]">
         <div>
           {isPlaying ? (
             <FaStop
@@ -59,7 +68,7 @@ export const SampleCollection = ({
           />
         </div>
       </h2>
-      <div className="sample__url col-start-2 col-span-4">{fileName}</div>
+      <div className="sample__url col-start-3 col-span-3">{fileName}</div>
 
       <div className="sample__instrument">{instrument}</div>
       <div className="sample__genre">{genre}</div>

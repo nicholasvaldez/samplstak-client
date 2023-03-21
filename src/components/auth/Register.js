@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { registerUser } from "../../managers/AuthManager"
 import "./auth.css"
@@ -12,20 +12,14 @@ export const Register = () => {
   const password = useRef()
   const verifyPassword = useRef()
   const passwordDialog = useRef()
+  const image = useRef()
   const navigate = useNavigate()
+
+  const [newUser, setNewUser] = useState({})
 
   const handleRegister = (e) => {
     e.preventDefault()
-
     if (password.current.value === verifyPassword.current.value) {
-      const newUser = {
-        username: username.current.value,
-        first_name: firstName.current.value,
-        last_name: lastName.current.value,
-        bio: bio.current.value,
-        password: password.current.value,
-      }
-
       registerUser(newUser).then((res) => {
         if ("token" in res) {
           localStorage.setItem("lu_token", res.token)
@@ -35,6 +29,28 @@ export const Register = () => {
     } else {
       passwordDialog.current.showModal()
     }
+  }
+
+  const getBase64 = (file, callback) => {
+    const reader = new FileReader()
+    reader.addEventListener("load", () => callback(reader.result))
+    reader.readAsDataURL(file)
+  }
+
+  const createImgString = (event) => {
+    getBase64(event.target.files[0], (base64imagestring) => {
+      console.log("Base64 of file is", base64imagestring)
+
+      // Update the newUser state variable with the value of base64imagestring
+      setNewUser({
+        username: username.current.value,
+        first_name: firstName.current.value,
+        last_name: lastName.current.value,
+        bio: bio.current.value,
+        password: password.current.value,
+        image: base64imagestring,
+      })
+    })
   }
 
   return (
@@ -118,6 +134,17 @@ export const Register = () => {
               placeholder="Tell us about yourself!"
               required
             />
+          </fieldset>
+
+          <fieldset>
+            <div className="form-group font-primary ">
+              <input
+                type="file"
+                id="producer_image"
+                onChange={createImgString}
+              />
+              <input type="hidden" name="producer_image" />
+            </div>
           </fieldset>
 
           <fieldset
