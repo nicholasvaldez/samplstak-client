@@ -9,6 +9,7 @@ import { SampleForm } from "../components/mysounds/EditMySounds"
 import { MySoundsList } from "../components/mysounds/MySoundsList"
 import { NavBar } from "../components/nav/NavBar"
 import { SampleList } from "../components/sample/SampleList"
+import { CreatePage } from "../components/utils/CreatePage"
 import { Authorized } from "./Authorized"
 
 export const ApplicationViews = () => {
@@ -26,6 +27,7 @@ export const ApplicationViews = () => {
           <Route path="mysounds/new" element={<SampleForm />} />
           <Route path="mysounds/edit/:sampleId" element={<SampleForm />} />
           <Route path="drumkits" element={<DrumkitsList />} />
+          <Route path="create" element={<CreatePage />} />
         </Route>
       </Routes>
     </>
