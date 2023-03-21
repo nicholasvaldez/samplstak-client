@@ -5,6 +5,7 @@ import { getGenres } from "../../managers/genres/Genres"
 import { getInstruments } from "../../managers/instruments/Instruments"
 import {
   getGenreSamples,
+  getRandomSamples,
   getSamples,
 } from "../../managers/samples/SampleManager"
 import { NavBar } from "../nav/NavBar"
@@ -21,14 +22,14 @@ export const SampleList = (props) => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    getSamples().then((data) => setSamples(data))
+    getRandomSamples().then((data) => setSamples(data))
   }, [])
 
   useEffect(() => {
     if (genreId !== "") {
       getGenreSamples(genreId).then((data) => setFilteredSamples(data))
     } else {
-      getSamples().then((data) => setFilteredSamples(data))
+      getRandomSamples().then((data) => setFilteredSamples(data))
     }
   }, [genreId])
 
@@ -37,7 +38,7 @@ export const SampleList = (props) => {
       const filteredCopy = samples.filter((s) => s.instrument.id === instId)
       setFilteredSamples(filteredCopy)
     } else {
-      getSamples().then((data) => setFilteredSamples(data))
+      getRandomSamples().then((data) => setFilteredSamples(data))
     }
   }, [instId])
 
