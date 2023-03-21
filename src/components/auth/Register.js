@@ -53,31 +53,23 @@ export const Register = () => {
   }
 
   return (
-    <main
-      style={{ textAlign: "center" }}
-      className=" fixed container--login bg-darkgrey h-screen w-screen text-white "
-    >
-      <dialog className="dialog dialog--password" ref={passwordDialog}>
+    <div className=" fixed bg-darkgrey h-screen w-screen text-white   ">
+      <dialog ref={passwordDialog}>
         <div>Passwords do not match</div>
-        <button
-          className="button--close"
-          onClick={(e) => passwordDialog.current.close()}
-        >
-          Close
-        </button>
+        <button onClick={(e) => passwordDialog.current.close()}>Close</button>
       </dialog>
       <section className="flex justify-center flex-col items-center">
-        <div className="logo transform scale-70">
+        <div className="logo transform scale-[60%]">
           <img src={`${logo}`} alt="Logo" />
         </div>
-        <form className="form--login" onSubmit={handleRegister}>
+        <form onSubmit={handleRegister}>
           <div className="flex justify-between">
             <fieldset>
               <input
                 ref={firstName}
                 type="text"
                 name="firstName"
-                className="pl-[10px] form-control  w-[190px] h-[43px] mb-[15px] rounded text-black"
+                className="pl-[10px]  w-[190px] h-[43px] mb-[15px] rounded text-black"
                 placeholder="First name"
                 required
                 autoFocus
@@ -88,7 +80,7 @@ export const Register = () => {
                 ref={lastName}
                 type="text"
                 name="lastName"
-                className="pl-[10px] form-control  w-[190px] h-[43px] mb-[15px] rounded text-black"
+                className="pl-[10px]  w-[190px] h-[43px] mb-[15px] rounded text-black"
                 placeholder="Last name"
                 required
               />
@@ -99,7 +91,7 @@ export const Register = () => {
               ref={username}
               type="text"
               name="username"
-              className="pl-[10px] form-control  w-[405px] h-[43px] mb-[15px] rounded text-black"
+              className="pl-[10px]  w-[405px] h-[43px] mb-[15px] rounded text-black"
               placeholder="Username"
               required
             />
@@ -109,7 +101,7 @@ export const Register = () => {
               ref={password}
               type="password"
               name="password"
-              className="pl-[10px] form-control  w-[405px] h-[43px] mb-[15px] rounded text-black"
+              className="pl-[10px]  w-[405px] h-[43px] mb-[15px] rounded text-black"
               placeholder="Password"
               required
             />
@@ -119,7 +111,7 @@ export const Register = () => {
               ref={verifyPassword}
               type="password"
               name="verifyPassword"
-              className="pl-[10px] form-control  w-[405px] h-[43px] mb-[15px] rounded text-black"
+              className="pl-[10px]  w-[405px] h-[43px] mb-[15px] rounded text-black"
               placeholder="Verify password"
               required
             />
@@ -129,14 +121,14 @@ export const Register = () => {
               ref={bio}
               type="text"
               name="bio"
-              className="pl-[10px] form-control  w-[405px] h-[86px] mb-[15px] rounded text-black"
+              className="pl-[10px]  w-[405px] h-[86px] mb-[15px] rounded text-black"
               placeholder="Tell us about yourself!"
               required
             />
           </fieldset>
 
           <fieldset>
-            <div className="form-group font-primary ">
+            <div className=" font-primary ">
               <input
                 type="file"
                 id="producer_image"
@@ -169,6 +161,6 @@ export const Register = () => {
           Already registered? <Link to="/login">Login</Link>
         </section>
       </section>
-    </main>
+    </div>
   )
 }

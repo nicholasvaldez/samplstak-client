@@ -24,7 +24,7 @@ export const MySoundsList = (props) => {
             Create.
           </div>
           <a href={"/mysounds/new"}>
-            <h1 className="plus text-[50px] mt-[15px]">
+            <h1 className="plus text-[50px] mt-[15px] text-green transition duration-500 ease-in-out hover:text-white cursor-pointer">
               <AiOutlinePlus />
             </h1>
           </a>

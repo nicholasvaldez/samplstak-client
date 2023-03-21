@@ -37,7 +37,7 @@ export const Login = () => {
         </button>
       </dialog>
       <section className="flex justify-center flex-col items-center">
-        <div className="logo transform scale-70">
+        <div className="logo transform scale-[60%]">
           <img src={`${logo}`} alt="Logo" />
         </div>
         <form className="form--login " onSubmit={handleLogin}>

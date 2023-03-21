@@ -1,5 +1,5 @@
 export const getSamples = () => {
-  return fetch("http://localhost:8000/samples", {
+  return fetch("http://localhost:8000/samples?random", {
     headers: {
       Authorization: `Token ${localStorage.getItem("lu_token")}`,
     },

@@ -39,7 +39,7 @@ export const Samples = ({
   return (
     <section
       key={`sample--${id}`}
-      className="sample font-primary w-[1300px] h-[90px] grid grid-cols-9 gap-4  flex items-center bg-[#1E1B1B] text-white mb-[5px] "
+      className="sample font-primary w-[1300px] h-[90px] grid grid-cols-9 gap-4  flex items-center bg-[#1E1B1B] text-white mb-[5px] transition duration-500 ease-in-out hover:bg-[#252525] cursor-pointer "
     >
       <div className="col-start-1">
         <img
@@ -48,7 +48,7 @@ export const Samples = ({
           className="ml-[35px] h-[50px] w-[50px] object-cover"
         ></img>
       </div>
-      <h2 className=" col-start-2 text-green flex justify-center text-[25px]">
+      <h2 className=" col-start-2 text-green flex justify-center text-[25px] transition duration-500 ease-in-out hover:text-[#65fc9a] cursor-pointer">
         <div>
           {isPlaying ? (
             <FaStop

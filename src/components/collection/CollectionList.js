@@ -60,7 +60,7 @@ export const CollectionList = (props) => {
           <fieldset className="drops__field">
             <div>
               <select
-                className="text-white font-bold rounded text-[20px] p-2 bg-[#1E1B1B] font-primary"
+                className=" font-bold rounded text-[20px] p-2 bg-[#1E1B1B] font-primary text-white transition duration-500 ease-in-out hover:text-darkgrey hover:bg-green cursor-pointer"
                 onChange={(evt) => {
                   const value = evt.target.value
                   if (value === "") {
@@ -85,7 +85,7 @@ export const CollectionList = (props) => {
           <fieldset className="drops__field">
             <div>
               <select
-                className="text-white font-bold rounded text-[20px] p-2 bg-[#1E1B1B] ml-[15px] font-primary "
+                className="text-white font-bold rounded text-[20px] p-2 bg-[#1E1B1B] ml-[15px] font-primary transition duration-500 ease-in-out hover:text-darkgrey hover:bg-green cursor-pointer "
                 onChange={(evt) => {
                   const value = evt.target.value
                   if (value.length === 0) {
