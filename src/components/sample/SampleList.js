@@ -116,6 +116,7 @@ export const SampleList = (props) => {
               producer={s.producer}
               instrument={s.instrument.label}
               genre={s.genre.map((g) => g.label).join(", ")}
+              image={s.producer.image}
             />
           ))}
         </article>

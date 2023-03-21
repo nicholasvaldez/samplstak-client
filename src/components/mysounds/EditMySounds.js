@@ -113,7 +113,7 @@ export const SampleForm = ({ token }) => {
               <div className="form-group">
                 <select
                   name="instrument"
-                  className="form-control text-black w-[190px] h-[43px] my-[15px] font-primary"
+                  className="form-control text-black w-[190px] h-[43px] my-[15px] font-primary rounded"
                   value={currentSample.instrument.id}
                   onChange={handleNewPostInfo}
                 >

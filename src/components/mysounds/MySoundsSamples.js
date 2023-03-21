@@ -12,6 +12,7 @@ export const MySoundsSamples = ({
   producer,
   instrument,
   genre,
+  image,
 }) => {
   const audioRef = useRef()
   const [isPlaying, setIsPlaying] = useState(false)
@@ -33,13 +34,21 @@ export const MySoundsSamples = ({
   }
 
   const file = "http://localhost:8000" + fileUrl
+  const imgFile = "http://localhost:8000" + image
 
   return (
     <section
       key={`sample--${id}`}
       className="sample font-primary w-[1200px] h-[90px] grid grid-cols-9 gap-4  flex items-center bg-[#1E1B1B] text-white mb-[5px] "
     >
-      <h2 className=" col-start-1 text-green flex justify-center text-[25px]">
+      <div className="col-start-1">
+        <img
+          src={imgFile}
+          alt="Producer Image"
+          className="ml-[35px] h-[50px] w-[50px] object-cover"
+        ></img>
+      </div>
+      <h2 className=" col-start-2 text-green flex justify-center text-[25px]">
         <div>
           {isPlaying ? (
             <FaStop
@@ -65,7 +74,7 @@ export const MySoundsSamples = ({
           />
         </div>
       </h2>
-      <div className="sample__url col-start-2 col-span-3">{fileName}</div>
+      <div className="sample__url col-start-3 col-span-2">{fileName}</div>
 
       <div className="sample__instrument flex justify-center">{instrument}</div>
       <div className="sample__genre flex justify-center">{genre}</div>

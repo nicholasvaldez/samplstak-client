@@ -112,9 +112,10 @@ export const CollectionList = (props) => {
               id={s.sample.id}
               fileUrl={s.sample.file_url}
               fileName={s.sample.file_name}
-              producer={s.sample.producer}
+              producer={s.sample.producer.id}
               instrument={s.sample.instrument.label}
               genre={s.sample.genre.map((g) => g.label).join(", ")}
+              image={s.sample.producer.image}
             />
           ))}
         </article>
