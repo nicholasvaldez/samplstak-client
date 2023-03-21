@@ -28,7 +28,7 @@ export const DrumkitsList = (props) => {
         <div className="mb-[30px]  text-[50px] font-bold font-primary">
           Drumkits.
         </div>
-        <article className="max-h-[555px] max-w-[1440px] ">
+        <article className="max-h-[555px] max-w-[1440px] flex flex-row  ">
           {drumkits.map((d) => (
             <Drumkits
               id={d.id}

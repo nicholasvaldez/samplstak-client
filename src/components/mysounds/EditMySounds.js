@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import { getDrumkits } from "../../managers/drumkits/DrumkitManager"
 import { getGenres } from "../../managers/genres/Genres"
 import { getInstruments } from "../../managers/instruments/Instruments"
 import { addNewSample, updateSample } from "../../managers/samples/MySounds"
@@ -12,6 +13,8 @@ export const SampleForm = ({ token }) => {
   const [genres, setGenres] = useState([])
   const [sampGenres, setSampGenres] = useState(new Set())
   const [file, setFile] = useState()
+  const [uploadToDrumkit, setUploadToDrumkit] = useState(false)
+  const [drumkits, setDrumkits] = useState([])
 
   const { sampleId } = useParams()
   const navigate = useNavigate()
@@ -28,6 +31,7 @@ export const SampleForm = ({ token }) => {
     file_name: "",
     instrument: 0,
     genre: [],
+    drumkit: null,
   })
 
   useEffect(() => {
@@ -47,6 +51,12 @@ export const SampleForm = ({ token }) => {
   useEffect(() => {
     getInstruments().then((data) => {
       setInstruments(data)
+    })
+  }, [])
+
+  useEffect(() => {
+    getDrumkits().then((data) => {
+      setDrumkits(data)
     })
   }, [])
 
@@ -101,7 +111,12 @@ export const SampleForm = ({ token }) => {
           <form className="addNewPostForm ">
             <fieldset>
               <div className="form-group font-primary ">
-                <input type="file" id="sample_audio" onChange={wrapperFunc} />
+                <input
+                  type="file"
+                  multiple
+                  id="sample_audio"
+                  onChange={wrapperFunc}
+                />
                 <input
                   type="hidden"
                   name="sample_id"
@@ -127,7 +142,7 @@ export const SampleForm = ({ token }) => {
               </div>
             </fieldset>
 
-            <div className="field">
+            <div className="field flex flex-row flex-wrap w-[200px] justify-evenly">
               {genres.map((g) => {
                 // Compare current `id` and see if on object exists with that id in currentGame.categories
                 const foundGenre = currentSample.genre.find(
@@ -135,7 +150,7 @@ export const SampleForm = ({ token }) => {
                 )
 
                 return (
-                  <div key={`genre--${g.id}`} className="flex flex-wrap">
+                  <div key={`genre--${g.id}`}>
                     <input
                       className="font-primary font mr-[10px] "
                       type="checkbox"
@@ -149,6 +164,35 @@ export const SampleForm = ({ token }) => {
                 )
               })}
             </div>
+            {sampleId ? (
+              <></>
+            ) : (
+              <div className="flex flex-col">
+                <label>
+                  <input
+                    className="my-[15px]"
+                    type="checkbox"
+                    checked={uploadToDrumkit}
+                    onChange={(e) => setUploadToDrumkit(e.target.checked)}
+                  />
+                  Upload to Drumkit?
+                </label>
+                {uploadToDrumkit && (
+                  <select
+                    name="drumkit"
+                    onChange={handleNewPostInfo}
+                    className="text-black w-[190px] h-[43px] my-[15px] font-primary rounded "
+                  >
+                    <option value={0}>Drumkits</option>
+                    {drumkits.map((dk) => (
+                      <option key={`drumkits--${dk.id}`} value={dk.id}>
+                        {dk.name}
+                      </option>
+                    ))}
+                  </select>
+                )}
+              </div>
+            )}
             <button
               type="publish"
               className="font-primary text-white font-bold bg-green rounded"
@@ -182,6 +226,7 @@ export const SampleForm = ({ token }) => {
                     instrument: parseInt(currentSample.instrument),
                     genre: Array.from(sampGenres),
                     producer: currentSample.producer,
+                    drumkit: parseInt(currentSample.drumkit),
                   }
 
                   addNewSample(sample).then(() => navigate("/mysounds"))

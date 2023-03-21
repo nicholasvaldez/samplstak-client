@@ -23,7 +23,7 @@ export const MySoundsList = (props) => {
           <div className="mb-[30px]  text-[50px] font-bold font-primary">
             Create.
           </div>
-          <a href={"/mysounds/new"}>
+          <a href={"/mysounds/create"}>
             <h1 className="plus text-[50px] mt-[15px] text-green transition duration-500 ease-in-out hover:text-white cursor-pointer">
               <AiOutlinePlus />
             </h1>
