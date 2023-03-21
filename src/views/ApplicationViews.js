@@ -3,6 +3,8 @@ import { Login } from "../components/auth/Login"
 import { Main } from "../components/auth/Main"
 import { Register } from "../components/auth/Register"
 import { CollectionList } from "../components/collection/CollectionList"
+import { DrumkitsList } from "../components/drumkits/DrumkitList"
+import { Drumkits } from "../components/drumkits/Drumkits"
 import { SampleForm } from "../components/mysounds/EditMySounds"
 import { MySoundsList } from "../components/mysounds/MySoundsList"
 import { NavBar } from "../components/nav/NavBar"
@@ -23,6 +25,7 @@ export const ApplicationViews = () => {
           <Route path="mysounds" element={<MySoundsList />} />
           <Route path="mysounds/new" element={<SampleForm />} />
           <Route path="mysounds/edit/:sampleId" element={<SampleForm />} />
+          <Route path="drumkits" element={<DrumkitsList />} />
         </Route>
       </Routes>
     </>
