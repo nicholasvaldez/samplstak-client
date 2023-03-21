@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { registerUser } from "../../managers/AuthManager"
-import "./auth.css"
 import logo from "../../assets/register.svg"
 
 export const Register = () => {
@@ -56,7 +55,7 @@ export const Register = () => {
   return (
     <main
       style={{ textAlign: "center" }}
-      className=" fixed container--login bg-darkgrey h-screen w-screen text-white"
+      className=" fixed container--login bg-darkgrey h-screen w-screen text-white "
     >
       <dialog className="dialog dialog--password" ref={passwordDialog}>
         <div>Passwords do not match</div>

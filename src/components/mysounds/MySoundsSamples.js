@@ -74,7 +74,7 @@ export const MySoundsSamples = ({
           />
         </div>
       </h2>
-      <div className="sample__url col-start-3 col-span-2">{fileName}</div>
+      <div className="sample__url col-start-3 col-span-3">{fileName}</div>
 
       <div className="sample__instrument flex justify-center">{instrument}</div>
       <div className="sample__genre flex justify-center">{genre}</div>
