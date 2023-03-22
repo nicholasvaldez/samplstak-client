@@ -38,7 +38,8 @@ export const MySoundsList = (props) => {
               producer={s.producer}
               instrument={s.instrument.label}
               genre={s.genre.map((g) => g.label).join(", ")}
-              image={s.producer.image}
+              image={s.drumkit?.image || s.producer.image}
+              drumkitId={s?.drumkit?.id}
             />
           ))}
         </article>

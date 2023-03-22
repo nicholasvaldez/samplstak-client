@@ -18,7 +18,7 @@ export const DrumkitDetails = (props) => {
       <NavBar />
       <div className="fixed w-screen h-screen bg-[#191414] text-white p-24">
         <div className="mb-[30px]  text-[50px] font-bold font-primary">
-          {drumkitSamples.map((dk) => dk.drumkit.name)}.
+          {drumkitSamples[0]?.drumkit.name}.
         </div>
 
         <article className="samples max-h-[440px] rounded-xl overflow-y-auto">
