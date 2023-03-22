@@ -31,6 +31,7 @@ export const DrumkitDetails = (props) => {
               instrument={dk.instrument.label}
               genre={dk.genre.map((g) => g.label).join(", ")}
               image={dk.drumkit.image}
+              drumkitId={dk.drumkit.id}
             />
           ))}
         </article>
