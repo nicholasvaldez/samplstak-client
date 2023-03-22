@@ -1,16 +1,19 @@
 import { useRef, useState } from "react"
 import { FaPlay, FaStop } from "react-icons/fa"
 import { Link } from "react-router-dom"
+import { MdRemoveCircleOutline } from "react-icons/md"
+import { removeFromCollection } from "../../managers/samples/Collection"
 
 export const SampleCollection = ({
   id,
   fileUrl,
   fileName,
   producer,
-  instrument,
+  instrumentId,
   genre,
   image,
   drumkitId,
+  trueId,
 }) => {
   const audioRef = useRef()
   const [isPlaying, setIsPlaying] = useState(false)
@@ -74,8 +77,18 @@ export const SampleCollection = ({
       </h2>
       <div className="sample__url col-start-3 col-span-3">{fileName}</div>
 
-      <div className="sample__instrument">{instrument}</div>
+      <div className="sample__instrument">{instrumentId.label}</div>
       <div className="sample__genre">{genre}</div>
+      <button
+        className="button text-white flex justify-center text-[25px] transition duration-500 ease-in-out hover:text-green cursor-pointer"
+        onClick={() =>
+          removeFromCollection(trueId).then(() => {
+            window.location.reload()
+          })
+        }
+      >
+        <MdRemoveCircleOutline />
+      </button>
     </section>
   )
 }

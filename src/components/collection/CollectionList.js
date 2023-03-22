@@ -56,7 +56,7 @@ export const CollectionList = (props) => {
         <div className="mb-[30px] text-[50px] font-bold font-primary">
           Collect.
         </div>
-        <div className="drops flex justify-between w-[200px] mb-[70px]">
+        {/* <div className="drops flex justify-between w-[200px] mb-[70px]">
           <fieldset className="drops__field">
             <div>
               <select
@@ -105,15 +105,16 @@ export const CollectionList = (props) => {
               </select>
             </div>
           </fieldset>
-        </div>
+        </div> */}
         <article className="samples max-h-[440px] rounded-xl overflow-y-auto">
           {filteredCollectionSamples.map((s) => (
             <SampleCollection
+              trueId={s.id}
               id={s.sample.id}
               fileUrl={s.sample.file_url}
               fileName={s.sample.file_name}
               producer={s.sample.producer.id}
-              instrument={s.sample.instrument.label}
+              instrumentId={s.sample.instrument}
               genre={s.sample.genre.map((g) => g.label).join(", ")}
               image={s.sample.drumkit?.image || s.sample.producer.image}
               drumkitId={s.sample.drumkit?.id}
