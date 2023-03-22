@@ -6,17 +6,18 @@ export const DrumkitSamples = ({
   id,
   fileUrl,
   fileName,
-  producer,
+  producerId,
   instrument,
   genre,
   image,
+  drumkitId,
 }) => {
   const audioRef = useRef()
   const [isPlaying, setIsPlaying] = useState(false)
 
   const handleAddToCollection = () => {
     window.alert(`${fileName} has been added to your Collection!`)
-    addToCollection({ sample: id, producer: producer.id })
+    addToCollection({ sample: id, producer: producerId })
   }
 
   const handleLogoClick = () => {

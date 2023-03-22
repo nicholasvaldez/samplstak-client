@@ -115,7 +115,7 @@ export const CollectionList = (props) => {
               producer={s.sample.producer.id}
               instrument={s.sample.instrument.label}
               genre={s.sample.genre.map((g) => g.label).join(", ")}
-              image={s.sample.producer.image}
+              image={s.sample.drumkit?.image || s.sample.producer.image}
             />
           ))}
         </article>
