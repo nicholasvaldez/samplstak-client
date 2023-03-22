@@ -1,5 +1,6 @@
 import { useRef, useState } from "react"
 import { FaPlay, FaStop } from "react-icons/fa"
+import { Link } from "react-router-dom"
 
 export const SampleCollection = ({
   id,
@@ -9,6 +10,7 @@ export const SampleCollection = ({
   instrument,
   genre,
   image,
+  drumkitId,
 }) => {
   const audioRef = useRef()
   const [isPlaying, setIsPlaying] = useState(false)
@@ -36,11 +38,13 @@ export const SampleCollection = ({
       className="sample font-primary w-[1300px] h-[90px] grid grid-cols-9 gap-4  flex items-center bg-[#1E1B1B] text-white mb-[5px] transition duration-500 ease-in-out hover:bg-[#252525] cursor-pointer "
     >
       <div className="col-start-1">
-        <img
-          src={imgFile}
-          alt="Producer Image"
-          className="ml-[35px] h-[50px] w-[50px] object-cover"
-        ></img>
+        <a href={`drumkits/detail/${drumkitId}`}>
+          <img
+            src={imgFile}
+            alt="Producer Image"
+            className="ml-[35px] h-[50px] w-[50px] object-cover"
+          ></img>
+        </a>
       </div>
       <h2 className=" col-start-2 text-green flex justify-center text-[25px] transition duration-500 ease-in-out hover:text-[#65fc9a] cursor-pointer">
         <div>
