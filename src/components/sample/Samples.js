@@ -17,7 +17,7 @@ export const Samples = ({
 
   const handleAddToCollection = () => {
     window.alert(`${fileName} has been added to your Collection!`)
-    addToCollection({ sample: id, producer: producer.id })
+    addToCollection({ sample: id })
   }
 
   const handleLogoClick = () => {
