@@ -1,5 +1,5 @@
 export const addToCollection = (sample) => {
-  return fetch(`http://localhost:8000/collections`, {
+  return fetch(`http://localhost:8000/collections?producer`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -9,16 +9,16 @@ export const addToCollection = (sample) => {
   })
 }
 
-export const getCollectionSamples = () => {
-  return fetch("http://localhost:8000/collections", {
+export const getCollectionSamples = (id) => {
+  return fetch(`http://localhost:8000/collections?producer`, {
     headers: {
       Authorization: `Token ${localStorage.getItem("lu_token")}`,
     },
-  }).then((response) => response.json())
+  }).then((response) => response.json(response))
 }
 
 export const getGenreCollectionSamples = (id) => {
-  return fetch(`http://localhost:8000/collections?genre=${id}`, {
+  return fetch(`http://localhost:8000/collections?producer&genre=${id}`, {
     headers: {
       Authorization: `Token ${localStorage.getItem("lu_token")}`,
     },
@@ -26,9 +26,18 @@ export const getGenreCollectionSamples = (id) => {
 }
 
 export const getInstrumentCollectionSamples = (id) => {
-  return fetch(`http://localhost:8000/collections?instrument=${id}`, {
+  return fetch(`http://localhost:8000/collections?producer&instrument=${id}`, {
     headers: {
       Authorization: `Token ${localStorage.getItem("lu_token")}`,
     },
   }).then((response) => response.json())
+}
+
+export const removeFromCollection = (id) => {
+  return fetch(`http://localhost:8000/collections/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Token ${localStorage.getItem("lu_token")}`,
+    },
+  })
 }
