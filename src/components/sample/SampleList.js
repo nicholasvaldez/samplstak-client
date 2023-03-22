@@ -117,8 +117,8 @@ export const SampleList = (props) => {
               producer={s.producer}
               instrument={s.instrument.label}
               genre={s.genre.map((g) => g.label).join(", ")}
-              image={s.sample.drumkit?.image || s.sample.producer.image}
-              drumkitId={s.sample.drumkit?.id}
+              image={s.drumkit?.image || s.producer.image}
+              drumkitId={s?.drumkit?.id}
             />
           ))}
         </article>
