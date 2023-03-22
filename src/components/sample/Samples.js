@@ -10,6 +10,7 @@ export const Samples = ({
   instrument,
   genre,
   image,
+  drumkitId,
 }) => {
   const audioRef = useRef()
   const [isPlaying, setIsPlaying] = useState(false)
