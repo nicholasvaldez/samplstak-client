@@ -7,6 +7,7 @@ import {
 import { Link } from "react-router-dom"
 import { NavBar } from "../nav/NavBar"
 import { AiOutlinePlus } from "react-icons/ai"
+import { FaAngleDown } from "react-icons/fa"
 
 export const MySoundsList = (props) => {
   const [samples, setSamples] = useState([])
@@ -20,11 +21,18 @@ export const MySoundsList = (props) => {
       <NavBar />
       <div className="fixed w-screen h-screen bg-[#191414] text-white p-24">
         <div className="flex justify-between">
-          <div className="mb-[30px]  text-[50px] font-bold font-primary">
-            Create.
+          <div>
+            <Link className="flex flex-row items-center ">
+              <div className="mb-[30px]  text-[50px] font-bold font-primary">
+                My Sampls
+              </div>
+              <div className="text-[30px] pl-[20px] pb-[20px]">
+                <FaAngleDown />
+              </div>
+            </Link>
           </div>
-          <a href={"/mysounds/create"}>
-            <h1 className="plus text-[50px] mt-[15px] text-green transition duration-500 ease-in-out hover:text-white cursor-pointer">
+          <a href={"/mysounds/new"}>
+            <h1 className="plus text-[50px] mt-[15px]">
               <AiOutlinePlus />
             </h1>
           </a>
