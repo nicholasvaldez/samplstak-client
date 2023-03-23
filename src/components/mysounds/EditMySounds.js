@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { getDrumkits } from "../../managers/drumkits/DrumkitManager"
+import {
+  getDrumkits,
+  getProducerDrumkits,
+} from "../../managers/drumkits/DrumkitManager"
 import { getGenres } from "../../managers/genres/Genres"
 import { getInstruments } from "../../managers/instruments/Instruments"
 import { addNewSample, updateSample } from "../../managers/samples/MySounds"
@@ -55,7 +58,7 @@ export const SampleForm = ({ token }) => {
   }, [])
 
   useEffect(() => {
-    getDrumkits().then((data) => {
+    getProducerDrumkits().then((data) => {
       setDrumkits(data)
     })
   }, [])

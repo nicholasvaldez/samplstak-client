@@ -31,3 +31,11 @@ export const getRandomDrumkits = () => {
     },
   }).then((response) => response.json())
 }
+
+export const getProducerDrumkits = () => {
+  return fetch("http://localhost:8000/drumkits?producer", {
+    headers: {
+      Authorization: `Token ${localStorage.getItem("lu_token")}`,
+    },
+  }).then((response) => response.json())
+}
