@@ -7,7 +7,9 @@ export const NavBar = () => {
   return (
     <ul className="navbar flex font-primary">
       <li className="logo ">
-        <img src={`${logo}`} alt="Logo" />
+        <Link className="navbar__link text-white" to="/home">
+          <img src={`${logo}`} alt="Logo" />
+        </Link>
       </li>
       {localStorage.getItem("lu_token") !== null ? (
         <>
