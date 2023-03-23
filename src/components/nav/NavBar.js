@@ -24,13 +24,13 @@ export const NavBar = () => {
             </Link>
           </li>
           <li className="navbar__item">
-            <Link className="navbar__link text-white" to="/mysounds">
-              My Sounds
+            <Link className="navbar__link text-white" to="/drumkits">
+              Drumkits
             </Link>
           </li>
           <li className="navbar__item">
-            <Link className="navbar__link text-white" to="/drumkits">
-              Drumkits
+            <Link className="navbar__link text-white" to="/mysounds">
+              My Sounds
             </Link>
           </li>
           <li className="logout-item text-white font-bold ">

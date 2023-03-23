@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { registerUser } from "../../managers/AuthManager"
-import logo from "../../assets/register.svg"
+import logo from "../../assets/newreg.svg"
 
 export const Register = () => {
   const firstName = useRef()
@@ -59,7 +59,7 @@ export const Register = () => {
         <button onClick={(e) => passwordDialog.current.close()}>Close</button>
       </dialog>
       <section className="flex justify-center flex-col items-center">
-        <div className="logo transform scale-[60%]">
+        <div className="logo transform scale-[70%] my-[50px]">
           <img src={`${logo}`} alt="Logo" />
         </div>
         <form onSubmit={handleRegister}>

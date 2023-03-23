@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { loginUser } from "../../managers/AuthManager"
-import logo from "../../assets/newnewlogin.svg"
+import logo from "../../assets/newloggy.svg"
 
 export const Login = () => {
   const username = useRef()
@@ -37,7 +37,7 @@ export const Login = () => {
         </button>
       </dialog>
       <section className="flex justify-center flex-col items-center">
-        <div className="logo transform scale-[60%]">
+        <div className="logo transform scale-[70%] mt-[50px] mb-[100px]">
           <img src={`${logo}`} alt="Logo" />
         </div>
         <form className="form--login " onSubmit={handleLogin}>
