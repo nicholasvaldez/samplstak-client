@@ -79,6 +79,7 @@ export const DrumkitSamples = ({
 
       <div className="sample__instrument">{instrument}</div>
       <div className="sample__genre">{genre}</div>
+
       <button
         className="button text-slate flex justify-center font-extrabold text-[30px] "
         onClick={() => {

@@ -23,3 +23,11 @@ export const getDrumkitSamples = (id) => {
     },
   }).then((response) => response.json())
 }
+
+export const getRandomDrumkits = () => {
+  return fetch("http://localhost:8000/drumkits?random", {
+    headers: {
+      Authorization: `Token ${localStorage.getItem("lu_token")}`,
+    },
+  }).then((response) => response.json())
+}

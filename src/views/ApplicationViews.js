@@ -12,6 +12,7 @@ import { MySoundsList } from "../components/mysounds/MySoundsList"
 import { NavBar } from "../components/nav/NavBar"
 import { SampleList } from "../components/sample/SampleList"
 import { CreatePage } from "../components/utils/CreatePage"
+import { HomePage } from "../components/utils/Home"
 import { Authorized } from "./Authorized"
 
 export const ApplicationViews = () => {
@@ -23,6 +24,7 @@ export const ApplicationViews = () => {
         <Route path="/register" element={<Register />} />
         <Route element={<Authorized />}>
           {/* Add Routes here */}
+          <Route path="/home" element={<HomePage />} />
           <Route path="/browse" element={<SampleList />} />
           <Route path="collection" element={<CollectionList />} />
           <Route path="mysounds" element={<MySoundsList />} />
