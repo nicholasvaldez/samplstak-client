@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+## Samplstak
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<b style="font-size: 20px;"><i>..explore the worlds best drumkit sample
+library and unmatched marketplace.</i></b>
 
-## Available Scripts
+### Application Overview
 
-In the project directory, you can run:
+Most modern music productions utilize audio samples to elevate and achieve their sonic goals for their project song. Whether it is a piano melody, or a drum break, or a sound clip of cars passing by on a busy road, producers "chop up" these audio files in their DAWS(digital audio workstations) to isolate specific parts (loops) to inspire the main riff of a song or layer sounds on top of each other for a unique "one-shot" sound. Drum samples specifically, are *very* unique and are often *made*, *collected*, and *traded* amongst producers in packs (zip files) called "drumkits." 
+**SamplStak** is a platform for users to browse samples created by others and to upload their very own samples to share. 
 
-### `npm start`
+## Technologies Used
+![HTML5](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Git](https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/VSCode%20-%23007ACC.svg?&style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Running This Application
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Installation
+Along with this repository, you will need to clone the [Neighborly Server](https://github.com/heymonicakay/neighborlyserver) repo as well which contains the data.
 
-### `npm test`
+1. Clone this repository and change to the directory in the terminal.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+git clone git@github.com:nicholasvaldez/samplstak-client.git
+cd samplstak-client
+```
+2. Access the data by following the instructions found here:
 
-### `npm run build`
+<a href="https://github.com/nicholasvaldez/samplstak-server" target="_blank"><img src="https://img.shields.io/badge/server repo%20-%2375120e.svg?&style=for-the-badge&&logoColor=white" alt="SamplStak Server Repo" style="height: auto !important; width: auto !important;" /></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Launch the client.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+    npm install
+    npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Demo User Credentials
 
-### `npm run eject`
+<p>
+Username: <i>Carrie1945</i>
+<br>
+Password: <i>me</i>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+####  Nick Valdez
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="https://www.github.com/nicholasvaldez/" target="_blank"><img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="Nick Valdea GitHub" style="height: auto !important;width: auto !important;" /></a> <a href="https://www.linkedin.com/in/nicholasvaldez/" target="_blank"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="Nick Valdez LinkedIn" style="height: auto !important;width: auto !important;" /></a>
