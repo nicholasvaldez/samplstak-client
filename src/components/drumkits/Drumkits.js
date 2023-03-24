@@ -5,7 +5,7 @@ export const Drumkits = ({ id, image, name, genreLabel }) => {
   const navigate = useNavigate()
 
   return (
-    <div key={`card--${id}`} className="w-[130px] h-[173px] basis-1/6 ">
+    <div key={`card--${id}`} className="w-[130px] h-[173px] w-1/6 ">
       <div
         key={`container--${id}`}
         className="w-[130px] h-[130px]  cursor-pointer "
@@ -17,7 +17,7 @@ export const Drumkits = ({ id, image, name, genreLabel }) => {
       </div>
       <div
         key={`title--${id}`}
-        className="h-[60px] w-[130px] bg-[#f8fafc] font-primary pl-[3px] pt-[3px] drop-shadow-2xl rounded transition duration-500 ease-in-out hover:text-darkgrey  cursor-pointer
+        className="h-[60px] w-[130px] bg-[#f8fafc] font-primary pl-[3px] pt-[3px] drop-shadow-2xl  transition duration-500 ease-in-out hover:text-darkgrey  cursor-pointer
     
         "
       >

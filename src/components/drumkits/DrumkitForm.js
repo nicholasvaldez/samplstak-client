@@ -148,7 +148,7 @@ export const DrumkitForm = ({ token }) => {
                   image: currentDrumkit.image,
                 }
 
-                addNewDrumkit(drumkit).then(() => navigate("/drumkits"))
+                addNewDrumkit(drumkit).then(() => navigate("/mysounds/mykits"))
 
                 /* updateSample(sampleId, sample).then(() => navigate("/mysounds")) */
               }}

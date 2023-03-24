@@ -39,3 +39,12 @@ export const getProducerDrumkits = () => {
     },
   }).then((response) => response.json())
 }
+
+export const deleteDrumkit = (id) => {
+  return fetch(`http://localhost:8000/drumkits/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Token ${localStorage.getItem("lu_token")}`,
+    },
+  })
+}
