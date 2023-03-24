@@ -2,6 +2,10 @@ import { addToCollection } from "../../managers/samples/Collection"
 import { FaPlay, FaStop } from "react-icons/fa"
 import { AiOutlinePlus } from "react-icons/ai"
 import { useRef, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { AiOutlineEdit } from "react-icons/ai"
+import { AiOutlineDelete } from "react-icons/ai"
+
 export const DrumkitSamples = ({
   id,
   fileUrl,
@@ -14,6 +18,9 @@ export const DrumkitSamples = ({
 }) => {
   const audioRef = useRef()
   const [isPlaying, setIsPlaying] = useState(false)
+  const navigate = useNavigate()
+
+  const userId = localStorage.getItem("lu_token")
 
   const handleAddToCollection = () => {
     window.alert(`${fileName} has been added to your Collection!`)
@@ -80,12 +87,7 @@ export const DrumkitSamples = ({
       <div className="sample__instrument">{instrument}</div>
       <div className="sample__genre">{genre}</div>
 
-      <button
-        className="button text-slate flex justify-center font-extrabold text-[30px] "
-        onClick={() => {
-          handleAddToCollection()
-        }}
-      >
+      <button className="button text-slate flex justify-center font-extrabold text-[30px] ">
         <AiOutlinePlus />
       </button>
     </section>

@@ -8,6 +8,7 @@ import { DrumkitForm } from "../components/drumkits/DrumkitForm"
 import { DrumkitsList } from "../components/drumkits/DrumkitList"
 import { Drumkits } from "../components/drumkits/Drumkits"
 import { SampleForm } from "../components/mysounds/EditMySounds"
+import { MyKits } from "../components/mysounds/MyKits"
 import { MySoundsList } from "../components/mysounds/MySoundsList"
 import { NavBar } from "../components/nav/NavBar"
 import { SampleList } from "../components/sample/SampleList"
@@ -32,6 +33,7 @@ export const ApplicationViews = () => {
           <Route path="mysounds/edit/:sampleId" element={<SampleForm />} />
           <Route path="mysounds/create" element={<CreatePage />} />
           <Route path="mysounds/drumkits/new" element={<DrumkitForm />} />
+          <Route path="mysounds/mykits" element={<MyKits />} />
           <Route path="drumkits" element={<DrumkitsList />} />
           <Route
             path="drumkits/detail/:drumkitId"
