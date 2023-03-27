@@ -34,6 +34,43 @@ cd samplstak-client
     npm start
 ```
 
+### User Stories
++ User able to register for a new account on SamplStak
++ An existing user able to login to SamplStak
++ User able to listen to audio samples within the app
++ Uesr able to filter samples while browsing samples 
++ User able to add samples to their personal collection
++ User able to browse drumkits
++ User able to upload their own samples and drumkits
++ User able to have a dedictaed view that displays their uploaded samples and drumkits
++ User able to edit and delete their uploaded samples and drumkits
+
+### Features 
++ Samples
+  - User able to differentiate the user who uploaded the sample by profile image next to sample play button
+  - If the original user who uploaded a sample, also uploaded it to drumkit, the drumkit cover art will display next to the sample play button
++ Drumkits
+  - When user clicks on a drumkit card, they will be redirected to a drumkit detail view that shows all samples associated with that drumkit
+  - User can filter all drumkits by genre
+  - All samples within the drumkit, are samples of the drumkits genre
++ Users' Uploads
+  - User has a list of their uploaded samples at the My Sounds path
+  - Plus sign is a button that routes user to add a sample form
+  - "My Samples" header is a button that toggles the view to "My Drumkits" that displays the users drumkits
+  - The same plus sign toggles the route to add a drumkit form when the view is switched
+  
+  ### SamplStak Screenshots
+![](https://github.com/nicholasvaldez/samplstak-client/blob/main/Screen%20Shot%202023-03-27%20at%209.52.07%20AM.png)
+![](https://github.com/nicholasvaldez/samplstak-client/blob/main/Screen%20Shot%202023-03-27%20at%209.49.00%20AM.png)
+![](https://github.com/nicholasvaldez/samplstak-client/blob/main/Screen%20Shot%202023-03-27%20at%209.49.09%20AM.png)
+![](https://github.com/nicholasvaldez/samplstak-client/blob/main/Screen%20Shot%202023-03-27%20at%209.49.17%20AM.png)
+![](https://github.com/nicholasvaldez/samplstak-client/blob/main/Screen%20Shot%202023-03-27%20at%209.49.36%20AM.png)
+![](https://github.com/nicholasvaldez/samplstak-client/blob/main/Screen%20Shot%202023-03-27%20at%209.49.43%20AM.png)
+![](https://github.com/nicholasvaldez/samplstak-client/blob/main/Screen%20Shot%202023-03-27%20at%209.49.50%20AM.png)
+![](https://github.com/nicholasvaldez/samplstak-client/blob/main/Screen%20Shot%202023-03-27%20at%209.49.59%20AM.png)
+
+
+
 #### Demo User Credentials
 
 <p>
