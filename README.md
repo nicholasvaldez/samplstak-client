@@ -15,7 +15,7 @@ Most modern music productions utilize audio samples to elevate and achieve their
 ## Running This Application
 
 ### Installation
-Along with this repository, you will need to clone the [SamplStak Server](https://github.com/nicholasvaldez/samplstak-server) repo, which contains the data.
+Along with this repository, you will need to clone the [SamplStak Server](https://github.com/nicholasvaldez/samplstak-server) repo, which contains the database and api endpoints.
 
 1. Clone this repository and change to the directory in the terminal.
 
