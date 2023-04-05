@@ -85,7 +85,7 @@ export const HomePage = () => {
                       <div>
                         <a href={`drumkits/detail/${dk.id}`}>
                           <img
-                            src={`http://localhost:8000${dk.image}`}
+                            src={`https://jellyfish-app-fo654.ondigitalocean.app${dk.image}`}
                             alt="drumkit Image"
                             className=" h-[50px] w-[50px] object-cover mr-[10px]"
                           ></img>
