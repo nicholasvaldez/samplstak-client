@@ -1,5 +1,5 @@
 export const getInstruments = () => {
-  return fetch("http://localhost:8000/instruments", {
+  return fetch("https://jellyfish-app-fo654.ondigitalocean.app/instruments", {
     headers: {
       Authorization: `Token ${localStorage.getItem("lu_token")}`,
     },

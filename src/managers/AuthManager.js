@@ -10,7 +10,7 @@ export const loginUser = (user) => {
 }
 
 export const registerUser = (user) => {
-  return fetch("http://localhost:8000/register", {
+  return fetch("https://jellyfish-app-fo654.ondigitalocean.app/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
