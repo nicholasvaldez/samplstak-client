@@ -1,16 +1,13 @@
 export const getMySoundsSamples = () => {
-  return fetch(
-    `https://jellyfish-app-fo654.ondigitalocean.app/samples?producer`,
-    {
-      headers: {
-        Authorization: `Token ${localStorage.getItem("lu_token")}`,
-      },
-    }
-  ).then((response) => response.json())
+  return fetch(`http://localhost:8000/samples?producer`, {
+    headers: {
+      Authorization: `Token ${localStorage.getItem("lu_token")}`,
+    },
+  }).then((response) => response.json())
 }
 
 export const addNewSample = (Sample) => {
-  return fetch("https://jellyfish-app-fo654.ondigitalocean.app/samples", {
+  return fetch("http://localhost:8000/samples", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -21,7 +18,7 @@ export const addNewSample = (Sample) => {
 }
 
 export const deleteSample = (id) => {
-  return fetch(`https://jellyfish-app-fo654.ondigitalocean.app/samples/${id}`, {
+  return fetch(`http://localhost:8000/samples/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Token ${localStorage.getItem("lu_token")}`,
@@ -30,7 +27,7 @@ export const deleteSample = (id) => {
 }
 
 export const updateSample = (id, sample) => {
-  return fetch(`https://jellyfish-app-fo654.ondigitalocean.app/samples/${id}`, {
+  return fetch(`http://localhost:8000/samples/${id}`, {
     method: "PUT",
     headers: {
       Authorization: `Token ${localStorage.getItem("lu_token")}`,
