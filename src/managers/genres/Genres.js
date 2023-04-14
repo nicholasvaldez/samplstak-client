@@ -1,5 +1,5 @@
 export const getGenres = () => {
-  return fetch("https://jellyfish-app-fo654.ondigitalocean.app/genres", {
+  return fetch("http://localhost:8000/genres", {
     headers: {
       Authorization: `Token ${localStorage.getItem("lu_token")}`,
     },

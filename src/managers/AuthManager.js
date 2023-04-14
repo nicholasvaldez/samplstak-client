@@ -1,5 +1,5 @@
 export const loginUser = (user) => {
-  return fetch("https://jellyfish-app-fo654.ondigitalocean.app/login", {
+  return fetch("http://localhost:8000/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -10,7 +10,7 @@ export const loginUser = (user) => {
 }
 
 export const registerUser = (user) => {
-  return fetch("https://jellyfish-app-fo654.ondigitalocean.app/register", {
+  return fetch("http://localhost:8000/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
