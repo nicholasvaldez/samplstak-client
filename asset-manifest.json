@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "https://nicholasvaldez.github.io/samplstak-client/static/css/main.9154d209.css",
-    "main.js": "https://nicholasvaldez.github.io/samplstak-client/static/js/main.4f6f7ccf.js",
-    "static/media/techivation-WHTq-xyU40o-unsplash.png": "https://nicholasvaldez.github.io/samplstak-client/static/media/techivation-WHTq-xyU40o-unsplash.580d4798168166070ebb.png",
-    "static/media/thagoat.png": "https://nicholasvaldez.github.io/samplstak-client/static/media/thagoat.453bc26eb9f352d04fe6.png",
-    "static/media/newreg.svg": "https://nicholasvaldez.github.io/samplstak-client/static/media/newreg.cb3a1fe49db39de93eed977a05afd57b.svg",
-    "static/media/newloggy.svg": "https://nicholasvaldez.github.io/samplstak-client/static/media/newloggy.df3bea98c49fd967ccc24e8528576f6b.svg",
-    "static/media/STACKY.svg": "https://nicholasvaldez.github.io/samplstak-client/static/media/STACKY.03e384a40d88f120ad600a35484b1124.svg",
-    "index.html": "https://nicholasvaldez.github.io/samplstak-client/index.html",
-    "main.9154d209.css.map": "https://nicholasvaldez.github.io/samplstak-client/static/css/main.9154d209.css.map",
-    "main.4f6f7ccf.js.map": "https://nicholasvaldez.github.io/samplstak-client/static/js/main.4f6f7ccf.js.map"
+    "main.css": "/samplstak-client/static/css/main.9154d209.css",
+    "main.js": "/samplstak-client/static/js/main.39cf9ce7.js",
+    "static/media/techivation-WHTq-xyU40o-unsplash.png": "/samplstak-client/static/media/techivation-WHTq-xyU40o-unsplash.580d4798168166070ebb.png",
+    "static/media/thagoat.png": "/samplstak-client/static/media/thagoat.453bc26eb9f352d04fe6.png",
+    "static/media/newreg.svg": "/samplstak-client/static/media/newreg.cb3a1fe49db39de93eed977a05afd57b.svg",
+    "static/media/newloggy.svg": "/samplstak-client/static/media/newloggy.df3bea98c49fd967ccc24e8528576f6b.svg",
+    "static/media/STACKY.svg": "/samplstak-client/static/media/STACKY.03e384a40d88f120ad600a35484b1124.svg",
+    "index.html": "/samplstak-client/index.html",
+    "main.9154d209.css.map": "/samplstak-client/static/css/main.9154d209.css.map",
+    "main.39cf9ce7.js.map": "/samplstak-client/static/js/main.39cf9ce7.js.map"
   },
   "entrypoints": [
     "static/css/main.9154d209.css",
-    "static/js/main.4f6f7ccf.js"
+    "static/js/main.39cf9ce7.js"
   ]
 }
