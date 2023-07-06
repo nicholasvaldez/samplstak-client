@@ -1,6 +1,6 @@
 ## Samplstak
 
-### ![Video Demo](https://www.loom.com/share/7ce29a209a524674a989752a16db0d98?sid=c94a1919-87d7-44ca-a290-4ca19fd0cfa9) 
+### [Video Demo](https://www.loom.com/share/7ce29a209a524674a989752a16db0d98?sid=c94a1919-87d7-44ca-a290-4ca19fd0cfa9) 
 
 
 
