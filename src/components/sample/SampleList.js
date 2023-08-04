@@ -72,7 +72,7 @@ export const SampleList = (props) => {
                   }
                 }}
               >
-                <option value="">{`instrument`}</option>
+                <option value="">{`Instrument`}</option>
                 {instruments.map((i) => (
                   <>
                     <option key={`instrument--${i.id}`} value={i.id}>
@@ -97,7 +97,7 @@ export const SampleList = (props) => {
                   }
                 }}
               >
-                <option value="">{`genre`}</option>
+                <option value="">{`Genre`}</option>
                 {genres.map((g) => (
                   <option key={`genre--${g.id}`} value={g.id}>
                     {g.label}

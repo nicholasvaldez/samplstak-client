@@ -34,8 +34,8 @@ export const Samples = ({
     setIsPlaying(false)
   }
 
-  const file = "https://jellyfish-app-fo654.ondigitalocean.app" + fileUrl
-  const imgFile = "https://jellyfish-app-fo654.ondigitalocean.app" + image
+  const file = "http://localhost:8000" + fileUrl
+  const imgFile = "http://localhost:8000" + image
 
   return (
     <section
